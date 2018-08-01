@@ -17,7 +17,6 @@ class DataManager {
 
 	setCurrentBee(bee) {
 		this.currentBee = bee;
-		this.navManager.showBeePosts();
 	}
 
 	addPost(post) {
@@ -36,5 +35,20 @@ class DataManager {
 				}
 			});
 		});
+	}
+
+	showBeePosts(bee) {
+		this.currentBee = bee;
+		this.navManager.showBeePosts();
+	}
+
+	showBeeAlbums(bee) {
+		this.currentBee = bee;
+		this.navManager.showBeeAlbums();
+	}
+
+	showBeeTodos(bee) {
+		this.currentBee = bee;
+		this.navManager.showBeeTodos();
 	}
 }

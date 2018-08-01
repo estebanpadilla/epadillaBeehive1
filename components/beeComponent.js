@@ -52,10 +52,22 @@ class BeeComponent extends Component {
 
 		//Add Events
 		this.postsBtn.onclick = this.postsBtnClick.bind(this);
+		this.albumBtn.onclick = this.albumBtnClick.bind(this);
+		this.todosBtn.onclick = this.todosBtnClick.bind(this);
 		// this.container.bee = this.model;
 	}
 
 	postsBtnClick(e) {
-		this.dataManager.setCurrentBee(this.model);
+		this.dataManager.showBeePosts(this.model);
 	}
+
+	albumBtnClick(e) {
+		this.dataManager.showBeeAlbums(this.model);
+	}
+
+	todosBtnClick(e) {
+		this.dataManager.showBeeTodos(this.model);
+	}
+
+
 }

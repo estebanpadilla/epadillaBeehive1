@@ -11,6 +11,8 @@ class NavManager {
 		this.dataManager = dataManager;
 		this.beesComponent = document.getElementById('beesComponent');
 		this.postsComponent = document.getElementById('postsComponent');
+		this.albumComponent = document.getElementById('albumComponent');
+		this.todosComponent = document.getElementById('todosComponent');
 		//Get container for bee posts, album and todos
 
 	}
@@ -24,17 +26,29 @@ class NavManager {
 	}
 
 	showBeePosts() {
-		this.postsComponent.innerHTML = '';
+
+		this.postsComponent.hidden = false;
+		this.albumComponent.hidden = true;
+		this.todosComponent.hidden = true;
+
+		this.postsComponent.innerHTML = 'POSTS';
+
 		this.dataManager.currentBee.posts.forEach(post => {
 			var postComponent = new PostComponent(post, this.postsComponent, this.dataManager);
 		});
 	}
 
-	showBeeAlbum() {
-
+	showBeeAlbums() {
+		this.postsComponent.hidden = true;
+		this.albumComponent.hidden = false;
+		this.todosComponent.hidden = true;
+		this.albumComponent.innerHTML = 'ALBUM';
 	}
 
 	showBeeTodos() {
-
+		this.postsComponent.hidden = true;
+		this.albumComponent.hidden = true;
+		this.todosComponent.hidden = false;
+		this.todosComponent.innerHTML = 'TODOS';
 	}
 }
