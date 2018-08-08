@@ -18,7 +18,7 @@ class NavManager {
 		//document.getElementById('postsComponent');
 		this.albumComponent = document.getElementById('albumComponent');
 		this.todosComponent = document.getElementById('todosComponent');
-		this.newPostCompoment = new NewPostCompoment(null, null, dataManager);
+		this.newPostCompoment = new NewPostCompoment(null, this.appComponent, dataManager);
 		this.newPostCompoment.hide();
 		// this.newPostCompoment.hidden = true;
 		//Get container for bee posts, album and todos
