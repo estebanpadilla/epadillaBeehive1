@@ -38,7 +38,7 @@ class PostComponent extends Component {
 	}
 
 	addCommentBtnClick() {
-		console.log('Show Add Comment UI');
+		console.log('Show Add Comment UI-Form');
 
 	}
 }

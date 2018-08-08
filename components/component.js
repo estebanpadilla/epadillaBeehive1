@@ -10,7 +10,10 @@ class Component {
 		this.model = model;
 		this.parent = parent;
 		this.dataManager = dataManager;
-		this.container = document.createElement('div');
-		this.parent.appendChild(this.container);
+
+		if (this.parent) {
+			this.container = document.createElement('div');
+			this.parent.appendChild(this.container);
+		}
 	}
 }
