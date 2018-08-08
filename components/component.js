@@ -16,4 +16,13 @@ class Component {
 			this.parent.appendChild(this.container);
 		}
 	}
+
+	show() {
+		this.container.hidden = false;
+	}
+
+	hide() {
+		this.container.hidden = true;
+	}
+
 }

@@ -5,11 +5,39 @@
 * @author Esteban Padilla <ep@estebanpadilla.com>
 * @version 1.0.0
 */
-class PostsComponent {
-	/**
-	* @param {data type} name - description.
-	*/
-	constructor() {
+class PostsComponent extends Component {
 
+	constructor(model, parent, dataManager) {
+		super(model, parent, dataManager);
+		this.container.className = 'postsComponent';
+
+		this.addPostBtn = document.createElement('button');
+		this.postsContainer = document.createElement('div');
+
+		this.addPostBtn.innerHTML = 'ADD POST';
+
+		this.container.appendChild(this.addPostBtn);
+		this.container.appendChild(this.postsContainer);
+
+		this.addPostBtn.onclick = this.addPostBtnClick.bind(this);
+	}
+
+	showBeePosts() {
+		this.postsContainer.innerHTML = '';
+		this.dataManager.currentBee.posts.forEach(post => {
+			var postComponent = new PostComponent(post, this.postsContainer, this.dataManager);
+		});
+
+		if (this.dataManager.user.id != this.dataManager.currentBee.id) {
+			this.addPostBtn.hidden = true;
+		} else {
+			this.addPostBtn.hidden = false;
+		}
+
+	}
+
+	addPostBtnClick(e) {
+		this.hide();
+		this.dataManager.navManager.showNewPostComponent();
 	}
 }

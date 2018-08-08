@@ -21,14 +21,6 @@ class NewPostCompoment extends Component {
 		this.postCounter = 1000000;
 	}
 
-	show() {
-		this.container.hidden = false;
-	}
-
-	hide() {
-		this.container.hidden = true;
-	}
-
 	okBtnClick(e) {
 		//Add new Post
 		this.postCounter++;
@@ -39,7 +31,6 @@ class NewPostCompoment extends Component {
 	}
 
 	cancelBtnClick(e) {
-		console.log('hide');
 		this.hide();
 		this.dataManager.navManager.showBeePosts();
 	}

@@ -11,7 +11,7 @@ class DataManager {
 		this.bees = [];
 		this.currentBee = null;
 		this.navManager = null;
-		this.user = new Bee(100, 'Esteban Padilla', 'epadilla', 'ep@estebanpadilla.com', '506 87066660', new Address('Cartago', new Geo(0.0, 0.0), 'Calle Quizarraces', '1000', '1000/1000'));
+		this.user = new Bee(111, 'Esteban Padilla', 'epadilla', 'ep@estebanpadilla.com', '506 87066660', new Address('Cartago', new Geo(0.0, 0.0), 'Calle Quizarraces', '1000', '1000/1000'));
 		this.bees.push(this.user);
 	}
 
