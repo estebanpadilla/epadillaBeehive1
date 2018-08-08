@@ -28,10 +28,17 @@ class NewPostCompoment extends Component {
 		this.dataManager.currentBee.posts.push(newPost)
 		this.hide();
 		this.dataManager.navManager.showBeePosts();
+		this.clearForm();
 	}
 
 	cancelBtnClick(e) {
 		this.hide();
 		this.dataManager.navManager.showBeePosts();
+		this.clearForm();
+	}
+
+	clearForm() {
+		this.title.value = '';
+		this.body.value = '';
 	}
 }
