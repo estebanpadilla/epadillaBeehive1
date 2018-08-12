@@ -18,12 +18,12 @@ class NavManager {
 		//document.getElementById('postsComponent');
 		this.albumComponent = document.getElementById('albumComponent');
 		this.todosComponent = document.getElementById('todosComponent');
-		this.newPostCompoment = new NewPostCompoment(null, this.appComponent, dataManager);
+		this.newPostCompoment = new NewPostComponent(null, this.appComponent, dataManager);
+		this.newCommentComponent = new NewCommentComponent(null, this.appComponent, this.dataManager);
 		this.newPostCompoment.hide();
+		this.newCommentComponent.hide();
 		// this.newPostCompoment.hidden = true;
 		//Get container for bee posts, album and todos
-
-
 	}
 
 	showBees() {
@@ -81,4 +81,14 @@ class NavManager {
 		this.todosComponent.hidden = true;
 		this.newPostCompoment.show();
 	}
+
+	showNewCommentComponent(post) {
+		this.postsComponent.container.hidden = true;
+		this.albumComponent.hidden = true;
+		this.todosComponent.hidden = true;
+		this.newPostCompoment.hide();
+		this.newCommentComponent.model = post;
+		this.newCommentComponent.show();
+	}
 }
+

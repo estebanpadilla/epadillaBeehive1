@@ -26,7 +26,7 @@ class PostComponent extends Component {
 		this.addCommentBtn.innerHTML = 'ADD COMMENT';
 
 		//Add Events
-		this.addCommentBtn.onclick = this.addCommentBtnClick;
+		this.addCommentBtn.onclick = this.addCommentBtnClick.bind(this);
 
 		this.addComments();
 	}
@@ -39,6 +39,6 @@ class PostComponent extends Component {
 
 	addCommentBtnClick() {
 		console.log('Show Add Comment UI-Form');
-
+		this.dataManager.navManager.showNewCommentComponent(this.model);
 	}
 }

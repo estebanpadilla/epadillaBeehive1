@@ -9,6 +9,8 @@ class PostsComponent extends Component {
 
 	constructor(model, parent, dataManager) {
 		super(model, parent, dataManager);
+
+		this.postsList = [];
 		this.container.className = 'postsComponent';
 
 		this.addPostBtn = document.createElement('button');
@@ -24,8 +26,13 @@ class PostsComponent extends Component {
 
 	showBeePosts() {
 		this.postsContainer.innerHTML = '';
+		this.postsList = [];
+
 		this.dataManager.currentBee.posts.forEach(post => {
+
 			var postComponent = new PostComponent(post, this.postsContainer, this.dataManager);
+
+			this.postsList.push(postComponent);
 		});
 
 		if (this.dataManager.user.id != this.dataManager.currentBee.id) {
@@ -34,6 +41,11 @@ class PostsComponent extends Component {
 			this.addPostBtn.hidden = false;
 		}
 
+		this.changePostComponentColor(9, 'blueColor');
+	}
+
+	changePostComponentColor(index, className) {
+		this.postsList[index].container.classList.add(className);
 	}
 
 	addPostBtnClick(e) {

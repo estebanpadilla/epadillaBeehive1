@@ -5,7 +5,7 @@
 * @author Esteban Padilla <ep@estebanpadilla.com>
 * @version 1.0.0
 */
-class NewPostCompoment extends Component {
+class NewPostComponent extends Component {
 
 	constructor(model, parent, dataManager) {
 		super(model, parent, dataManager);
@@ -22,8 +22,9 @@ class NewPostCompoment extends Component {
 		this.form.appendChild(this.okBtn);
 		this.form.appendChild(this.cancelBtn);
 
-
 		this.container.className = 'newPostCompoment';
+
+
 		this.okBtn.innerHTML = 'OK';
 		this.cancelBtn.innerHTML = 'CANCEL';
 
@@ -52,7 +53,6 @@ class NewPostCompoment extends Component {
 	}
 
 	clearForm() {
-		this.title.value = '';
-		this.body.value = '';
+		this.form.reset();
 	}
 }
