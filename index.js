@@ -100,7 +100,6 @@ function init() {
 		}
 	}
 
-
 	function addPostByUserID(post) {
 
 	}
